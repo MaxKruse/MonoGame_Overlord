@@ -7,15 +7,21 @@ namespace MonoGame_Overlord
     /// <summary>
     /// This is the main type for your game.
     /// </summary>
-    public class Game1 : Game
+    public class Overlord : Game
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
-        
-        public Game1()
+
+        private FrameCounter frameCounter;
+        private string fps;
+        private float deltaTime;
+
+        public Overlord()
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
+
+            frameCounter = new FrameCounter();
         }
 
         /// <summary>
@@ -29,6 +35,17 @@ namespace MonoGame_Overlord
             // TODO: Add your initialization logic here
 
             base.Initialize();
+            graphics.PreferredBackBufferWidth = (int)ScreenManager.Instance.Dimensions.X;
+            graphics.PreferredBackBufferHeight = (int)ScreenManager.Instance.Dimensions.Y;
+            graphics.ApplyChanges();
+
+            Window.AllowUserResizing = false;
+            Window.AllowAltF4 = true;
+            Window.Title = "Overlord - Made in MonoGame";
+
+            IsFixedTimeStep = false;
+            graphics.SynchronizeWithVerticalRetrace = false;
+
         }
 
         /// <summary>
@@ -40,7 +57,9 @@ namespace MonoGame_Overlord
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
-            // TODO: use this.Content to load your game content here
+            // TODO: use Content to load your game content here
+
+            ScreenManager.Instance.LoadContent(Content);
         }
 
         /// <summary>
@@ -50,6 +69,8 @@ namespace MonoGame_Overlord
         protected override void UnloadContent()
         {
             // TODO: Unload any non ContentManager content here
+
+            ScreenManager.Instance.UnloadContent();
         }
 
         /// <summary>
@@ -64,7 +85,19 @@ namespace MonoGame_Overlord
 
             // TODO: Add your update logic here
 
+            deltaTime = (float)gameTime.ElapsedGameTime.TotalSeconds;
+
+            frameCounter.Update(deltaTime);
+            fps = string.Format("FPS: {0:0.0}", frameCounter.AverageFramesPerSecond);
+
+#if DEBUG
+            Window.Title = "Overlord - Made in MonoGame [" + fps + "]";
+#endif
+
+
             base.Update(gameTime);
+
+            ScreenManager.Instance.Update(gameTime);
         }
 
         /// <summary>
@@ -73,11 +106,16 @@ namespace MonoGame_Overlord
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.CornflowerBlue);
+            GraphicsDevice.Clear(Color.DeepSkyBlue);
 
             // TODO: Add your drawing code here
 
             base.Draw(gameTime);
+
+            spriteBatch.Begin();
+            ScreenManager.Instance.Draw(spriteBatch, fps);
+
+            spriteBatch.End();
         }
     }
 }
