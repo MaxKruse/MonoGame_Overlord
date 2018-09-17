@@ -1,9 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <SplashScreen>
-  <ImagePath>SplashScreen/Image</ImagePath>
-  <FontPath>Fonts/Calibri</FontPath>
-  <Dimensions>
-    <X>1600</X>
-    <Y>900</Y>
-  </Dimensions>
+  <Image>
+    <Path>SplashScreen/Image</Path>
+    <Dimensions>
+      <X>1600</X>
+      <Y>900</Y>
+    </Dimensions>
+  </Image>
 </SplashScreen>
