@@ -78,10 +78,13 @@ namespace MonoGame_Overlord
                     itemNumber--;
             }
 
+
             if (itemNumber < 0)
-                itemNumber = 0;
-            else if (itemNumber > Items.Count - 1)
                 itemNumber = Items.Count - 1;
+            else if (itemNumber > Items.Count - 1)
+                itemNumber = 0;
+
+
 
             for (int i = 0; i < Items.Count; i++)
             {
@@ -116,7 +119,7 @@ namespace MonoGame_Overlord
                 if (Axis == "X")
                     item.Image.Position = new Vector2(dimensions.X, (ScreenManager.Instance.Dimensions.Y - item.Image.SourceRect.Height) / 2);
                 else if (Axis == "Y")
-                    item.Image.Position = new Vector2((ScreenManager.Instance.Dimensions.Y - item.Image.SourceRect.Width) / 2, dimensions.Y);
+                    item.Image.Position = new Vector2((ScreenManager.Instance.Dimensions.X - item.Image.SourceRect.Width) / 2, dimensions.Y);
 
                 dimensions += new Vector2(item.Image.SourceRect.Width, item.Image.SourceRect.Height);
             }
