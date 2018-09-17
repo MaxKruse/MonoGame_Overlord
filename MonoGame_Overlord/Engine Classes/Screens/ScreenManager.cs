@@ -51,8 +51,7 @@ namespace MonoGame_Overlord
 
         public void LoadContent(ContentManager content)
         {
-
-            Content = new ContentManager(content.ServiceProvider, "Content");
+            Content = content;
             currentScreen.LoadContent();
             Image.LoadContent();
 
@@ -63,8 +62,6 @@ namespace MonoGame_Overlord
             Content.Unload();
             currentScreen.UnloadContent();
             Image.UnloadContent();
-            currentScreen = null;
-            Image = null;
         }
 
         public void Update(GameTime gameTime)

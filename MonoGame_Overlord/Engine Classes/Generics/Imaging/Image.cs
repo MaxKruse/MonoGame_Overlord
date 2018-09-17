@@ -30,12 +30,13 @@ namespace MonoGame_Overlord
 
         public Image()
         {
-            Alpha = 0.7f;
+            Alpha = 1.0f;
             Path = Text = Effects = String.Empty;
-            FontName = "Fonts/Calibri_24";
+            FontName = "Fonts/Calibri_48";
             Position = Vector2.Zero;
             Scale = Vector2.One;
             SourceRect = Rectangle.Empty;
+            Dimensions = Vector2.Zero;
 
             origin = Vector2.Zero;
 

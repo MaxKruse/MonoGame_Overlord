@@ -73,6 +73,10 @@
     <Compile Include="Engine Classes\Generics\Imaging\Image.cs" />
     <Compile Include="Engine Classes\Generics\Imaging\ImageEffect.cs" />
     <Compile Include="Engine Classes\Generics\InputManager.cs" />
+    <Compile Include="Engine Classes\Generics\Menu\MenuItem.cs" />
+    <Compile Include="Engine Classes\Generics\Menu\MenuManager.cs" />
+    <Compile Include="Engine Classes\Generics\Menu\Menu.cs" />
+    <Compile Include="Engine Classes\Screens\TitleScreen.cs" />
     <Compile Include="Game Classes\Entity.cs" />
     <Compile Include="Game Classes\EffectData.cs" />
     <Compile Include="Game Classes\Enemy.cs" />
@@ -153,18 +157,23 @@
     </None>
     <None Include="app.manifest" />
     <None Include="Content\Fonts\Calibri_14.spritefont" />
+    <None Include="Content\Fonts\Calibri_48.spritefont" />
     <None Include="Content\Fonts\Calibri_24.spritefont" />
-    <None Include="Content\Overlord.mgcb">
+    <MonoGameContentReference Include="Content\Overlord.mgcb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="Help\BassNet.chm" />
+    </MonoGameContentReference>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\ScreenManager\FadeImage.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\SplashScreen\Image.jpg" />
+    <Content Include="Content\SplashScreen\Image.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\SplashScreen\Sounds\Startup.mp3">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Load\SplashScreen.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <SubType>Designer</SubType>
@@ -172,6 +181,9 @@
     <Content Include="Load\ScreenManager.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Load\Menu\TitleMenu.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
   <ItemGroup>

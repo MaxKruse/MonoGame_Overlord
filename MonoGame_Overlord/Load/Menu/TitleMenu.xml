@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Menu>
+  <Effects>FadeEffect</Effects>
+  <Axis>Y</Axis>
+  
+  <Item>
+    <Image>
+      <FadeEffect>
+        <FadeSpeed>2.0</FadeSpeed>
+      </FadeEffect>
+      <Text>New Game</Text>
+    </Image>
+  </Item>
+
+  <Item>
+    <Image>
+      <FadeEffect>
+        <FadeSpeed>2.0</FadeSpeed>
+      </FadeEffect>
+      <Text>Load Game</Text>
+    </Image>
+  </Item>
+
+  <Item>
+    <Image>
+      <FadeEffect>
+        <FadeSpeed>2.0</FadeSpeed>
+      </FadeEffect>
+      <Text>Options</Text>
+    </Image>
+  </Item>
+
+  <Item>
+    <Image>
+      <FadeEffect>
+        <FadeSpeed>2.0</FadeSpeed>
+      </FadeEffect>
+      <Text>Credits</Text>
+    </Image>
+  </Item>
+  
+  <Item>
+    <Image>
+      <FadeEffect>
+        <FadeSpeed>2.0</FadeSpeed>
+      </FadeEffect>
+      <Text>Quit</Text>
+    </Image>
+  </Item>
+</Menu>

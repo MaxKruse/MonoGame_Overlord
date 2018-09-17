@@ -2,9 +2,5 @@
 <SplashScreen>
   <Image>
     <Path>SplashScreen/Image</Path>
-    <Dimensions>
-      <X>1600</X>
-      <Y>900</Y>
-    </Dimensions>
   </Image>
 </SplashScreen>

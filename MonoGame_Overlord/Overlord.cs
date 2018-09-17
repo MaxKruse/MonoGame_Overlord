@@ -38,11 +38,14 @@ namespace MonoGame_Overlord
             base.Initialize();
             graphics.PreferredBackBufferWidth = (int)ScreenManager.Instance.Dimensions.X;
             graphics.PreferredBackBufferHeight = (int)ScreenManager.Instance.Dimensions.Y;
+            graphics.SynchronizeWithVerticalRetrace = false;
             graphics.ApplyChanges();
 
             Window.AllowUserResizing = false;
             Window.AllowAltF4 = true;
             Window.Title = "Overlord - Made in MonoGame";
+
+
         }
 
         /// <summary>
@@ -93,7 +96,7 @@ namespace MonoGame_Overlord
             base.Update(gameTime);
 
             ScreenManager.Instance.Update(gameTime);
-            //InputManager.Instance.Update(gameTime);
+            InputManager.Instance.Update(gameTime);
         }
 
         /// <summary>
